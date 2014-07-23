@@ -68,10 +68,21 @@
 	a:hover{
 		text-decoration: underline;
 	}
+	.right{
+		position: absolute;
+		top: -90px;
+		right: -90px;
+		width: 170px;
+		height: 170px;
+		-webkit-transform: rotate(45deg);
+		font-size: 14px;
+		background: #d23f31;
+	}
   </style>
   	<core-animated-pages id="pages" transitions="slide-from-right" selected="{{pageIndex}}">
-    <section>
+    <section style="overflow: hidden;">
       <div layout vertical center center-justified>
+      	<p class="right" layout vertical center end-justified><span>Powered by Polymer</span></p>
       	<img src="resources/images/p-logo.svg"/>
         <h1>Polymer</h1>
         <p>Welcome To The World Of Tomorrow!</p>
@@ -88,6 +99,7 @@
       		<p>G+: Mobile Web Development</p>
       		<p>@Polymer中文社区(Q群208264834)</p>
       		<p><img src="resources/images/MIHTool.png" width="24px" style="margin: 0 5px;"/>MIHTool作者</p>
+	      	<p><a href="http://unbug.github.io/gdg14/" target="_blank">http://unbug.github.io/gdg14/</a></p>
       	</div>
       </div>
     </section>
