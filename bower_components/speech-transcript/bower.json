@@ -1,0 +1,8 @@
+{
+  "name": "speech-transcript",
+  "private": true,
+  "dependencies": {
+    "polymer": "Polymer/polymer#>=0.3.0 <1.0.0",
+    "speech-mic": "Polymer/speech-mic#>=0.3.0 <1.0.0"
+  }
+}

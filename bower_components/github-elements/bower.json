@@ -1,0 +1,8 @@
+{
+  "name": "github-elements",
+  "private": true,
+  "dependencies": {
+    "polymer": "Polymer/polymer#>=0.3.0 <1.0.0",
+    "github": "michael/github#master"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "name": "typeahead-input",
+  "private": true,
+  "dependencies": {
+    "polymer": "Polymer/polymer#>=0.3.0 <1.0.0"
+  },
+  "homepage": "https://github.com/Polymer/typeahead-input",
+  "version": "0.3.0",
+  "_release": "0.3.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "0.3.0",
+    "commit": "520b06396fed115950207a53892ba71b1bbfcdbc"
+  },
+  "_source": "git://github.com/Polymer/typeahead-input.git",
+  "_target": ">=0.3.0 <1.0.0",
+  "_originalSource": "Polymer/typeahead-input"
+}

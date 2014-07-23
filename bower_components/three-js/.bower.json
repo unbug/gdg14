@@ -1,0 +1,18 @@
+{
+  "name": "three-js",
+  "private": true,
+  "dependencies": {
+    "polymer": "Polymer/polymer#>=0.3.0 <1.0.0"
+  },
+  "homepage": "https://github.com/Polymer/three-js",
+  "version": "0.3.0",
+  "_release": "0.3.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "0.3.0",
+    "commit": "708c89fc6266d6c053a478714d627bae19480078"
+  },
+  "_source": "git://github.com/Polymer/three-js.git",
+  "_target": ">=0.3.0 <1.0.0",
+  "_originalSource": "Polymer/three-js"
+}

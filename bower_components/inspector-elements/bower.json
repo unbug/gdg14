@@ -1,0 +1,10 @@
+{
+  "name": "inspector-elements",
+  "private": true,
+  "dependencies": {
+    "core-animation": "Polymer/core-animation#>=0.3.0 <1.0.0",
+    "core-icons": "Polymer/core-icons#>=0.3.0 <1.0.0",
+    "core-pages": "Polymer/core-pages#>=0.3.0 <1.0.0",
+    "x-meta": "Polymer/x-meta#>=0.3.0 <1.0.0"
+  }
+}

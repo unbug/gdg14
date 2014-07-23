@@ -1,0 +1,170 @@
+<!--
+Copyright (c) 2014 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<!--
+The `speech-mic` element has a mic icon and tapping on the mic will start the 
+speech recognition and invite the user to allow a page access to their
+microphone.  Once the access is allowed the user can start talking to the
+microphone and transcript will be recorded until the mic is tapped again to
+stop the speech recognition.
+
+Example:
+
+    <input value="{{transcript}}">
+    <speech-mic transcript="{{transcript}}"></speech-mic>
+
+@element speech-mic
+@homepage github.io
+-->
+
+<link rel="import" href="../polymer/polymer.html">
+
+<polymer-element name="speech-mic" attributes="transcript completeTranscript">
+<template>
+
+  <style>
+  
+    :host {
+      display: inline-block;
+    }
+
+    #mic {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: url(images/mic.png) center no-repeat;
+      cursor: pointer;
+    }
+
+    #mic.recognizing {
+      background-color: red;
+      -webkit-animation: zoom 0.75s linear infinite;
+      animation: zoom 0.75s linear infinite;
+    }
+
+    @-webkit-keyframes zoom {
+      0% {-webkit-transform: scale(0.75);}
+      100% {-webkit-transform: scale(1);}
+    }
+    
+    @keyframes zoom {
+      0% {transform: scale(0.75);}
+      100% {transform: scale(1);}
+    }
+
+  </style>
+  
+  <div id="mic" class="{{ {recognizing: recognizing} | tokenList }}" on-tap="{{toggleRecognition}}"></div>
+  
+</template>
+<script>
+
+  Polymer('speech-mic', {
+    
+    /**
+     * Fired when the speech recognizer returns a result.
+     * 
+     * @event speech-mic-result
+     * @param {Object} detail
+     *   @param {Object} detail.results SpeechRecognitionEvent object
+     *   @param {Object} detail.transcript The current transcript string
+     *   @param {Object} detail.completeTranscript The complete transcript 
+     *                   string for the continuous recognition.
+     */
+    
+    /**
+     * Returns the current transcript string.
+     *
+     * @attribute transcript
+     * @type string
+     * @default ''
+     */
+    transcript: '',
+    
+    /**
+     * Returns the complete transcript string for the continuous recognition.
+     *
+     * @attribute completeTranscript
+     * @type string
+     * @default ''
+     */
+    completeTranscript: '',
+    
+    /**
+     * Specifies the language of the speech synthesis for the utterance.
+     *
+     * @attribute language
+     * @type string
+     * @default 'en-US'
+     */
+    language: 'en-US',
+    
+    ready: function() {
+      if (window.webkitSpeechRecognition) {
+        this.recognition = new webkitSpeechRecognition();
+        this.recognition.continuous = true;
+        this.recognition.interimResults = true;
+        this.recognition.lang = this.language;
+        this.recognition.onstart = this.start.bind(this);
+        this.recognition.onresult = this.result.bind(this);
+        this.recognition.onerror = this.error.bind(this);
+        this.recognition.onend = this.end.bind(this);
+      } else {
+        this.$.mic.display = 'none';
+      }
+    },
+    
+    toggleRecognition: function() {
+      if (!this.recognition) {
+        return;
+      }
+      if (this.recognizing) {
+        this.recognition.stop();
+      } else {
+        this.recognition.start();
+      }
+    },
+    
+    start: function(e) {
+      this.recognizing = true;
+    },
+    
+    end: function() {
+      this.recognizing = false;
+    },
+    
+    stop: function() {
+      this.recognition && this.recognition.stop();
+    },
+    
+    result: function(e) {
+      var t, ft = '', ct = '';
+      for (var i = 0, r; r = e.results[i]; i++) {
+        t = r[0] && r[0].transcript || '';
+        ft = r.isFinal && t;
+        ct += t;
+      }
+      this.transcript = t;
+      this.completeTranscript = ct;
+      this.fire('speech-mic-result', {
+        results: e.results,
+        transcript: t,
+        finalTranscript: ft,
+        completeTranscript: ct
+      });
+    },
+    
+    error: function(e) {
+      console.log(e);
+    }
+    
+  });
+  
+</script>
+</polymer-element>

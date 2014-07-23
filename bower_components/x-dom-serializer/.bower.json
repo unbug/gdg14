@@ -1,0 +1,19 @@
+{
+  "name": "x-dom-serializer",
+  "private": true,
+  "dependencies": {
+    "polymer": "Polymer/polymer#>=0.3.0 <1.0.0",
+    "x-binding": "Polymer/x-binding#>=0.3.0 <1.0.0"
+  },
+  "homepage": "https://github.com/Polymer/x-dom-serializer",
+  "version": "0.3.0",
+  "_release": "0.3.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "0.3.0",
+    "commit": "0eccb70fe4b5f0c714bd6fa60b31881b4fe9a52f"
+  },
+  "_source": "git://github.com/Polymer/x-dom-serializer.git",
+  "_target": ">=0.3.0 <1.0.0",
+  "_originalSource": "Polymer/x-dom-serializer"
+}

@@ -1,0 +1,317 @@
+  <link rel="import" href="bower_components/polymer/polymer.html">
+  <link rel="import" href="bower_components/core-icons/core-icons.html">
+  <link href="bower_components/core-animated-pages/core-animated-pages.html" rel="import">
+  <link href="bower_components/core-animated-pages/transitions/cross-fade.html" rel="import">
+  <link href="bower_components/core-animated-pages/transitions/slide-from-right.html" rel="import">
+  <link rel="import" href="bower_components/paper-shadow/paper-shadow.html">
+  
+  <link rel="import" href="bower_components/paper-fab/paper-fab.html">
+
+<polymer-element name="gdg-slider">
+  <template>
+  <style>
+    core-animated-pages{
+      position: absolute;
+      top: 0px;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      font-size: 32px;
+      overflow: hidden;
+      background-color: #222;
+      color: #eee;
+    }
+    p,h1,h2,h3,h4,h5{
+    	padding: 5px;
+    	margin: 0;	
+    	word-break: break-all;
+    }
+    h1{
+    	padding: 10px;
+    }
+    section{
+    	width: 100%;
+    }
+    section > div {
+      height: 100%;
+      padding: 0 30px;
+    }
+    section.nav{
+    	position: absolute;
+    	bottom: 30px;
+    	left: 0;
+    }
+    section.nav>div{
+    	padding: 0 30px;
+    }
+    section.nav>div:first-child{
+    	padding-right: 0;
+    }
+    #preBtn{
+    	background: #999;
+    }
+    .me{
+    	border-radius: 500px;
+    }
+	code{
+		color: #9f499b;
+		padding: 0 5px;
+	}
+	div{
+		padding: 5px;
+	}
+	a,a:active,a:visited,a:link{
+		padding: 0 5px;
+		color: #e7ad52 !important;
+		text-decoration: none;
+	}
+	a:hover{
+		text-decoration: underline;
+	}
+  </style>
+  	<core-animated-pages id="pages" transitions="slide-from-right" selected="{{pageIndex}}">
+    <section>
+      <div layout vertical center center-justified>
+      	<img src="resources/images/p-logo.svg"/>
+        <h1>Polymer</h1>
+        <p>Welcome To The World Of Tomorrow!</p>
+      </div>
+    </section>
+    <section>
+      <div layout horizontal center center-justified>
+      	<div flex one layout horizontal center center-justified>
+      		<img class="me" src="resources/images/unbug.jpeg"/>
+      	</div>
+      	<div flex one layout vertical start-justified>
+      		<p>网易前端 <span style="color: #e81d62;">正在招聘，欢迎加入</span></p>
+      		<p>Twitter @unbug 微博 @听奏</p>
+      		<p>G+: Mobile Web Development</p>
+      		<p>@Polymer中文社区(Q群208264834)</p>
+      		<p><img src="resources/images/MIHTool.png" width="24px" style="margin: 0 5px;"/>MIHTool作者</p>
+      	</div>
+      </div>
+    </section>
+    <section>
+      <div layout vertical center-justified>
+      	<h1>Polymer</h1>
+      	<p>Core Elements</p>
+      	<p>Paper Elements(Material design)</p>
+      	<p>Google APIs</p>
+      	<p>Polymer Designer</p>
+      	<p>Chrome Dev Editor</p>
+      </div>
+    </section>
+    <section>
+      <div layout vertical center-justified>
+      	<video controls autobuffer onclick="this.play();" height="600"><source src="resources/videos/Welcome-to-the-World-of-Tomorrow.mp4" type="video/mp4"></video>
+      </div>
+    </section>
+    <section>
+      <div layout vertical center-justified>
+      	<h1>Core Elements</h1>
+      	<p><a target="_blank" href="http://www.polymer-project.org/docs/elements/core-elements.html">www.polymer-project.org/docs/elements/core-elements.html</a></p>
+    </section>
+    <section>
+      <div layout vertical center center-justified>
+      	<div layout horizontal center-justified>
+      		<div flex one layout vertical start-justified>
+      			<h2>Visual</h2>
+      			<p><code>&lt;core-header-panel&gt;</code><a target="_blank" href="bower_components/core-header-panel/">[^]</a></p>
+      			<p><code>&lt;core-toolbar&gt;</code><a target="_blank" href="bower_components/core-toolbar/">[^]</a></p>
+      			<p><code>&lt;core-drawer-panel&gt;</code><a target="_blank" href="bower_components/core-drawer-panel/">[^]</a></p>
+      			<p><code>&lt;core-animated-pages&gt;</code><a target="_blank" href="bower_components/core-animated-pages/">[^]</a></p>
+      			<p><code>&lt;core-menu&gt;</code><a target="_blank" href="bower_components/core-menu/">[^]</a></p>
+      			<p><code>&lt;core-icon&gt;</code><a target="_blank" href="bower_components/core-icon/">[^]</a></p>
+      			<p><code>&lt;core-overlay&gt;</code><a target="_blank" href="bower_components/core-overlay/">[^]</a></p>
+      			<p><code>&lt;core-animated-pages&gt;</code><a target="_blank" href="bower_components/core-animated-pages/">[^]</a></p>
+	      	</div>
+	      	<div layout vertical start-justified>
+	      		<h2>Non-visual</h2>
+      			<p><code>&lt;core-ajax&gt;</code><a target="_blank" href="bower_components/core-ajax/">[^]</a></p>
+      			<p><code>&lt;core-localstorage&gt;</code><a target="_blank" href="../../io2014-codelabs/unbug/PolymerMobileCodelab/">[^]</a></p>
+      			<p><code>&lt;core-range&gt;</code></p>
+      			<p><code>&lt;core-media-query&gt;</code></p>
+      			<p><code>&lt;core-iconset&gt;</code></p>
+	      	</div>
+      	</div>
+      </div>
+    </section>
+    <section>
+      <div layout vertical center-justified>
+      	<h1>Material design with Polymer</h1>
+      	<p>Application layout</p>
+		<p>Icons</p>
+		<p>Material controls</p>
+		<p>Dialogs, snackbars, and toasts</p>
+		<p>Material effects<p>
+		<p>Transitions</p>
+		<p>Scrolling techniques</p>
+      </div>
+    </section>
+    <section>
+      <div layout vertical center-justified>
+      	<h1>Application layout<a target="_blank" href="http://www.polymer-project.org/docs/elements/layout-elements.html">[^]</a></h1>
+      	<p><code>&lt;core-header-panel&gt;</code><a target="_blank" href="bower_components/core-header-panel/">[^]</a></p>
+		<p><code>&lt;core-toolbar&gt;</code><a target="_blank" href="bower_components/core-toolbar/">[^]</a></p>
+		<p><code>&lt;core-drawer-panel&gt;</code><a target="_blank" href="bower_components/core-drawer-panel/">[^]</a></p>
+		<p><code>&lt;core-scaffold&gt;</code><a target="_blank" href="bower_components/core-scaffold/">[^]</a></p>
+      </div>
+    </section>
+    <section>
+      <div layout vertical center-justified>
+      	<h1>Icons<a target="_blank" href="http://www.polymer-project.org/docs/elements/icons.html">[^]</a></h1>
+      	<p><code>&lt;core-icon&gt;</code><a target="_blank" href="bower_components/core-icon/">[^]</a></p>
+      </div>
+    </section>
+    <section>
+      <div layout vertical center-justified>
+      	<h1>Material controls</h1>
+      	<p><code>&lt;paper-button&gt;</code><a target="_blank" href="bower_components/paper-button/">[^]</a></p>
+      	<p><code>&lt;paper-checkbox&gt;</code><a target="_blank" href="bower_components/paper-checkbox/">[^]</a></p>
+      	<p><code>&lt;paper-toggle-button&gt;</code><a target="_blank" href="bower_components/paper-toggle-button/">[^]</a></p>
+      	<p><code>&lt;paper-icon-button&gt;</code><a target="_blank" href="bower_components/paper-icon-button/">[^]</a></p>
+      	<p><code>&lt;paper-fab&gt;</code><a target="_blank" href="bower_components/paper-fab/">[^]</a></p>
+      	<p><code>&lt;paper-radio-group&gt;</code><a target="_blank" href="bower_components/paper-radio-group/">[^]</a></p>
+      	<p><code>&lt;paper-radio-button&gt;</code><a target="_blank" href="bower_components/paper-radio-button/">[^]</a></p>
+      	<p><code>&lt;paper-slider&gt;</code><a target="_blank" href="bower_components/paper-slider/">[^]</a></p>
+      	<p><code>&lt;paper-progress&gt;</code><a target="_blank" href="bower_components/paper-progress/">[^]</a></p>
+      	<p><code>&lt;paper-input&gt;</code><a target="_blank" href="bower_components/paper-input/">[^]</a></p>
+      </div>
+    </section>
+    <section>
+      <div layout vertical center-justified>
+      	<h1>Dialogs, snackbars, and toasts</h1>
+      	<p><code>&lt;paper-dialog&gt;</code><a target="_blank" href="bower_components/paper-dialog/">[^]</a></p>
+      	<p><code>&lt;paper-toast&gt;</code><a target="_blank" href="bower_components/paper-toast/">[^]</a></p>
+      </div>
+    </section>
+    <section>
+      <div layout vertical center-justified>
+      	<h1>Material effects</h1>
+      	<p><code>&lt;paper-ripple&gt;</code><a target="_blank" href="bower_components/paper-ripple/">[^]</a></p>
+      	<p><code>&lt;paper-shadow&gt;</code><a target="_blank" href="bower_components/paper-shadow/">[^]</a></p>
+      </div>
+    </section>
+    <section>
+      <div layout vertical center-justified>
+      	<h1>Transitions</h1>
+      	<p><code>&lt;core-animated-pages&gt;</code><a target="_blank" href="bower_components/core-animated-pages/">[^]</a></p>
+      </div>
+    </section>
+    <section>
+      <div layout vertical center-justified>
+      	<h1>Scrolling techniques</h1>
+      	<p><code>&lt;core-scroll-header-panel&gt;</code><a target="_blank" href="bower_components/core-scroll-header-panel/">[^]</a></p>
+      </div>
+    </section>
+    <section>
+      <div layout vertical center-justified>
+      	<h1>Paper Elements<a target="_blank" href="bower_components/paper-elements/demo.html">[^]</a></h1>
+      	<p><a target="_blank" href="http://www.polymer-project.org/docs/elements/paper-elements.html">www.polymer-project.org/docs/elements/paper-elements.html</a></p>
+      </div>
+    </section>
+    <section>
+      <div layout vertical center-justified>
+      	<h1>Topeka App<a target="_blank" href="../Topeka/topeka/">[^]</a></h1>
+      	<p><a target="_blank" href="http://www.polymer-project.org/docs/elements/paper-elements.html">www.polymer-project.org/docs/elements/paper-elements.html</a></p>
+      	<h1>Material Playground<a target="_blank" href="../MaterialPlayground/material-playground/">[^]</a></h1>
+      	<p><a target="_blank" href="http://ebidel.github.io/material-playground/">ebidel.github.io/material-playground/</a></p>
+      	<h1>Paper Calculator<a target="_blank" href="../PaperCalculator/paper-calculator/demo.html">[^]</a></h1>
+      	<p><a target="_blank" href="http://www.polymer-project.org/components/paper-calculator/demo.html">www.polymer-project.org/components/paper-calculator/demo.html</a></p>
+      </div>
+    </section>
+    <section>
+      <div layout vertical center-justified>
+      	<h1>Google APIs</h1>
+      	<p><code>&lt;google-signin&gt;</code><a target="_blank" href="http://127.0.0.1:51792/PolymerDriveCodelab/index.html">[^]</a></p>
+      	<p><code>&lt;google-map&gt;</code><a target="_blank" href="http://127.0.0.1:51792/PolymerMapsCodelab/index.html">[^]</a></p>
+      	<p><code>&lt;google-youtube&gt;</code></p>
+      	<p><code>&lt;google-cloud&gt;</code></p>
+      	<p><code>&lt;google-drive&gt;</code></p>
+      	<p><code>&lt;google-calendar&gt;</code></p>
+      	<p><a href="https://github.com/GoogleWebComponents" target="_blank">https://github.com/GoogleWebComponents</a></p>
+      </div>
+    </section>
+    <section>
+      <div layout vertical center-justified>
+      	<h1>Polymer Designer<a target="_blank" href="../Designer/designer/">[^]</a></h1>
+      	<p><a target="_blank" href="http://www.polymer-project.org/tools/designer/">www.polymer-project.org/tools/designer/</a></p>
+      </div>
+    </section>
+    <section>
+      <div layout vertical center-justified>
+      	<h1>Chrome Dev Editor</h1>
+      	<p><a target="_blank" href="https://chrome.google.com/webstore/detail/chrome-dev-editor-develop/pnoffddplpippgcfjdhbmhkofpnaalpg?hl=en">https://chrome.google.com/webstore/detail/chrome-dev-editor-develop/pnoffddplpippgcfjdhbmhkofpnaalpg?hl=en</a></p>
+      </div>
+    </section>
+    <section>
+      <div layout vertical center center-justified>
+      	<video controls autobuffer onclick="this.play();" height="600"><source src="resources/videos/Welcome-to-the-World-of-Tomorrow.mp4" type="video/mp4"></video>
+      	<p><a target="_blank" href="http://www.polymer-project.org/">http://www.polymer-project.org</a></p>
+      	<p><a target="_blank" href="https://github.com/Polymer">https://github.com/Polymer</a></p>
+      </div>
+    </section>
+    <section>
+      <div layout vertical center center-justified>
+      	<p><img src="resources/images/hiring.png" width="200"/></p>
+      	<h1>Q & A</h1>
+      	<p>Thank you</p>
+      	<p>@Polymer中文社区(Q群208264834)</p>
+      	<p>@听奏 <span style="color: #e81d62;">网易前端期待你的加入 ;)</span></p>
+      </div>
+    </section>
+  </core-animated-pages>
+  <section class="nav" layout horizontal end-justified>
+  	<div layout horizontal><paper-fab start-justified icon="icons:arrow-back" id="preBtn" on-click="{{prePage}}"><paper-shadow z="5"></paper-shadow></paper-fab></div>
+  	<div layout horizontal><paper-fab icon="icons:arrow-forward" id="nextBtn" on-click="{{nextPage}}"><paper-shadow z="5"></paper-shadow></paper-fab></div>
+  </section>
+  </template>
+  <script>
+    Polymer('gdg-slider',{
+    	pageIndex: 0,
+    	pageMax: 0,
+    	ready: function(){
+    		this.pageMax = this.$.pages.children.length-1;
+    		this.$.pages.focus();
+    		this.pageIndex = parseInt(window.location.hash.replace('#','') || 0);
+    		this.toggleBtns();
+    	},
+    	keypressHandler: function(event, detail, sender){
+    		var code = event.keyCode;
+			if(code==32 || code==39){
+				this.nextPage();
+			}else if(code==37){
+				this.prePage();
+			}
+    	},
+    	prePage: function(){
+    		this.pageIndex -= 1;
+	        if(this.pageIndex <= 0) {
+	      		this.pageIndex = 0;
+	        }
+	        window.location.hash = this.pageIndex;
+	        this.toggleBtns();
+    	},
+    	nextPage: function() {
+    		this.pageIndex += 1;
+	        if(this.pageIndex >= this.pageMax) {
+	      		this.pageIndex = this.pageMax;
+	        }
+	        window.location.hash = this.pageIndex;
+	        this.toggleBtns();
+    	},
+    	toggleBtns: function(){
+    		if(this.pageIndex >= this.pageMax) {
+    			this.$.nextBtn.hidden = true;
+    		}else{
+    			this.$.nextBtn.removeAttribute('hidden');
+    		}
+    		if(this.pageIndex <= 0) {
+    			this.$.preBtn.hidden = true;
+    		}else{
+    			this.$.preBtn.removeAttribute('hidden');
+    		}
+    	}
+    });
+  </script>
+</polymer-element>
