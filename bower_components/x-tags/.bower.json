@@ -1,0 +1,16 @@
+{
+  "name": "x-tags",
+  "private": true,
+  "dependencies": {},
+  "homepage": "https://github.com/Polymer/x-tags",
+  "version": "0.3.0",
+  "_release": "0.3.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "0.3.0",
+    "commit": "b32f28da4157d3bb9bd6e3d40c95b6969e036b95"
+  },
+  "_source": "git://github.com/Polymer/x-tags.git",
+  "_target": ">=0.3.0 <1.0.0",
+  "_originalSource": "Polymer/x-tags"
+}

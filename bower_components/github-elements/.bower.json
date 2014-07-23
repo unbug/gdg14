@@ -1,0 +1,19 @@
+{
+  "name": "github-elements",
+  "private": true,
+  "dependencies": {
+    "polymer": "Polymer/polymer#>=0.3.0 <1.0.0",
+    "github": "michael/github#master"
+  },
+  "homepage": "https://github.com/PolymerLabs/github-elements",
+  "version": "0.3.0",
+  "_release": "0.3.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "0.3.0",
+    "commit": "6bad0a8eee20139314fa009cfd92d96e08781591"
+  },
+  "_source": "git://github.com/PolymerLabs/github-elements.git",
+  "_target": ">=0.3.0 <1.0.0",
+  "_originalSource": "PolymerLabs/github-elements"
+}

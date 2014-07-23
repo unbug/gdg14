@@ -1,0 +1,8 @@
+{
+  "name": "tk-buildbot",
+  "private": true,
+  "dependencies": {
+    "polymer": "Polymer/polymer#>=0.3.0 <1.0.0",
+    "polymer-ajax": "Polymer/polymer-ajax#>=0.3.0 <1.0.0"
+  }
+}

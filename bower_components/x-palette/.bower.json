@@ -1,0 +1,23 @@
+{
+  "name": "x-palette",
+  "private": true,
+  "dependencies": {
+    "polymer": "Polymer/polymer#>=0.3.0 <1.0.0",
+    "polymer-ui-icon": "Polymer/polymer-ui-icon#>=0.3.0 <1.0.0",
+    "polymer-ui-menu": "Polymer/polymer-ui-menu#>=0.3.0 <1.0.0",
+    "polymer-ui-menu-item": "Polymer/polymer-ui-menu-item#>=0.3.0 <1.0.0",
+    "polymer-ui-submenu-item": "Polymer/polymer-ui-submenu-item#>=0.3.0 <1.0.0",
+    "x-meta": "Polymer/x-meta#>=0.3.0 <1.0.0"
+  },
+  "homepage": "https://github.com/Polymer/x-palette",
+  "version": "0.3.0",
+  "_release": "0.3.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "0.3.0",
+    "commit": "ea366828646fa653d6c619dc023cec2a575898c9"
+  },
+  "_source": "git://github.com/Polymer/x-palette.git",
+  "_target": ">=0.3.0 <1.0.0",
+  "_originalSource": "Polymer/x-palette"
+}
