@@ -307,16 +307,20 @@
     	pageIndex: 0,
     	pageMax: 0,
     	ready: function(){
+    		this.tabIndex = 0;
     		this.pageMax = this.$.pages.children.length-1;
     		this.$.pages.focus();
     		this.pageIndex = parseInt(window.location.hash.replace('#','') || 0);
     		this.toggleBtns();
     	},
     	keypressHandler: function(event, detail, sender){
-    		var code = event.keyCode;
-			if(code==32 || code==39){
+    		var code = event.keyCode,
+    			leftK = [37,44,91,97],
+    			rightK = [32,39,46,93,100];
+    		//Left,Right,Up,Down wont fire
+			if(rightK.indexOf(code)!=-1){
 				this.nextPage();
-			}else if(code==37){
+			}else if(leftK.indexOf(code)!=-1){
 				this.prePage();
 			}
     	},

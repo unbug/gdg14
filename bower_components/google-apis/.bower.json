@@ -1,16 +1,37 @@
 {
   "name": "google-apis",
-  "private": true,
+  "version": "0.3.1",
+  "homepage": "http://googlewebcomponents.github.io/google-apis",
+  "description": "Web components to load Google API libraries",
+  "main": "google-apis.html",
+  "authors": [
+    "Scott Miles <sjmiles@google.com>",
+    "Eric Bidelman <ebidel@gmail.com>"
+  ],
+  "license": "Apache2",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "../"
+  ],
+  "keywords": [
+    "web-component",
+    "web-components",
+    "polymer",
+    "google",
+    "apis"
+  ],
   "dependencies": {
-    "core-shared-lib": "Polymer/core-shared-lib#>=0.3.0 <1.0.0"
+    "core-shared-lib": "Polymer/core-shared-lib#~0.3.4"
   },
-  "homepage": "https://github.com/PolymerLabs/google-apis",
-  "version": "0.3.0",
-  "_release": "0.3.0",
+  "_release": "0.3.1",
   "_resolution": {
     "type": "version",
-    "tag": "0.3.0",
-    "commit": "b39767382c0485bc16fa95df73b17f664eacea10"
+    "tag": "0.3.1",
+    "commit": "904cde88dd299fc6faab66a91959c8c28e62c30d"
   },
   "_source": "git://github.com/PolymerLabs/google-apis.git",
   "_target": ">=0.3.0 <1.0.0",
