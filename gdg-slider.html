@@ -7,7 +7,7 @@
   
   <link rel="import" href="bower_components/paper-fab/paper-fab.html">
 
-<polymer-element name="gdg-slider" on-keypress="{{keypressHandler}}">
+<polymer-element name="gdg-slider" on-keydown="{{keypressHandler}}">
   <template>
   <style>
     core-animated-pages{
@@ -315,9 +315,9 @@
     	},
     	keypressHandler: function(event, detail, sender){
     		var code = event.keyCode,
-    			leftK = [37,44,91,97],
-    			rightK = [32,39,46,93,100];
-    		//Left,Right,Up,Down wont fire
+    			leftK = [37,44,91,97,188,219],
+    			rightK = [32,39,46,93,100,221,190];
+    		console.log(code);
 			if(rightK.indexOf(code)!=-1){
 				this.nextPage();
 			}else if(leftK.indexOf(code)!=-1){
