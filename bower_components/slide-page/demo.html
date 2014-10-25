@@ -1,185 +1,34 @@
-  <link rel="import" href="bower_components/polymer/polymer.html">
-  <link rel="import" href="bower_components/core-icons/core-icons.html">
-  <link href="bower_components/core-animated-pages/core-animated-pages.html" rel="import">
-  <link href="bower_components/core-animated-pages/transitions/cross-fade.html" rel="import">
-  <link href="bower_components/core-animated-pages/transitions/slide-from-right.html" rel="import">
-  <link rel="import" href="bower_components/paper-shadow/paper-shadow.html">
-  
-  <link rel="import" href="bower_components/paper-fab/paper-fab.html">
+<!--
+    @license
+    Copyright (c) 2014 The Polymer Project Authors. All rights reserved.
+    This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+    The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+    The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+    Code distributed by Google as part of the polymer project is also
+    subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+<!doctype html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <title>slide-page Demo</title>
 
-<polymer-element name="gdg-slider" on-keydown="{{keypressHandler}}">
-  <template>
+  <script src="../platform/platform.js"></script>
+  <link rel="import" href="slide-page.html">
   <style>
-  @-webkit-keyframes fadeInDown {
-	  0% {
-	    opacity: 0;
-	    -webkit-transform: translate3d(0, -100%, 0);
-	  }
-	
-	  100% {
-	    opacity: 1;
-	    -webkit-transform: none;
-	  }
-	}
-    @-webkit-keyframes fadeInRight {
-	  0% {
-	    opacity: 0;
-	    -webkit-transform: translate3d(100%, 0, 0);
-	  }
-	
-	  100% {
-	    opacity: 1;
-	    -webkit-transform: none;
-	  }
-	}
-  	@-webkit-keyframes fadeInUp {
-	  0% {
-	    opacity: 0;
-	    -webkit-transform: translate3d(0, 100%, 0);
-	  }
-	
-	  100% {
-	    opacity: 1;
-	    -webkit-transform: none;
-	  }
-	}
-	
-	.fadeInUp,p{
-	  -webkit-animation-name: fadeInUp;
-	  -webkit-animation-duration: 1s;
-	  -webkit-animation-delay: 0ms;
-	}
-	@-webkit-keyframes bounceInDown {
-		0% {
-			opacity: 0;
-			-webkit-transform: translateY(-2000px);
-		}
-	
-		60% {
-			opacity: 1;
-			-webkit-transform: translateY(30px);
-		}
-	
-		80% {
-			-webkit-transform: translateY(-10px);
-		}
-	
-		100% {
-			-webkit-transform: translateY(0);
-			opacity: 1;
-		}
-	}
-	@-webkit-keyframes flipInY {
-	  0% {
-	    -webkit-transform: perspective(400px) rotateY(90deg);
-	    opacity: 0;
-	  }
-	
-	  40% {
-	    -webkit-transform: perspective(400px) rotateY(-10deg);
-	  }
-	
-	  70% {
-	    -webkit-transform: perspective(400px) rotateY(10deg);
-	  }
-	
-	  100% {
-	    -webkit-transform: perspective(400px) rotateY(0deg);
-	    opacity: 1;
-	  }
-	}
-	.flipInY{
+  	.flipInY{
 		-webkit-animation-name: flipInY;
 		-webkit-animation-duration: 1s;
 		-webkit-animation-delay: 500ms;
 	}
-	.bounceInDown{
-		-webkit-animation-name: bounceInDown;
-		-webkit-animation-duration: 1s;
-		-webkit-animation-delay: 100ms;
-	}
-	.fadeInDown,h2,h1{
-		-webkit-animation-name: fadeInDown;
-		-webkit-animation-duration: 1s;
-		-webkit-animation-delay: 0ms;
-	}
-    core-animated-pages{
-      position: absolute;
-      top: 0px;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      font-size: 32px;
-      overflow: hidden;
-      background-color: #222;
-      color: #eee;
-    }
-    p,h1,h2,h3,h4,h5{
-    	padding: 5px;
-    	margin: 0;	
-    	word-break: break-all;
-    }
-    h1{
-    	padding: 10px;
-    }
-    section{
-    	width: 100%;
-    }
-    section > div {
-      height: 100%;
-      padding: 0 30px;
-    }
-    section.nav{
-    	position: absolute;
-    	bottom: 30px;
-    	left: 0;
-    }
-    section.nav>div{
-    	padding: 0 30px;
-    }
-    section.nav>div:first-child{
-    	padding-right: 0;
-    }
-    #preBtn{
-    	background: #999;
-    }
-    .me{
-    	border-radius: 500px;
-    }
-	code{
-		color: #9f499b;
-		padding: 0 5px;
-	}
-	div{
-		padding: 5px;
-	}
-	a,a:active,a:visited,a:link{
-		padding: 0 5px;
-		color: #e7ad52 !important;
-		text-decoration: none;
-	}
-	a:hover{
-		text-decoration: underline;
-	}
-	.right{
-		position: absolute;
-		top: -70px;
-		left: -100px;
-		width: 170px;
-		height: 170px;
-		-webkit-transform: rotate(-45deg);
-		font-size: 15px;
-		background: #999;
-		font-weight: bold;
-		color: #fff;
-	}
-	.right>span{
-		padding: 10px;
+	.me{
+		border-radius: 500px;
 	}
   </style>
-  	<core-animated-pages id="pages" transitions="slide-from-right" selected="{{pageIndex}}">
+</head>
+<body unresolved>
+  <slide-page>
     <section style="overflow: hidden;">
-	  <div class="right" layout vertical center end-justified><span>Powered by Polymer</span><paper-shadow z="5"></paper-shadow></div>
       <div layout vertical center center-justified>
       	<img class="flipInY" src="resources/images/p-logo.svg"/>
         <h1>Polymer</h1>
@@ -392,61 +241,7 @@
       	<p>@听奏 <span><a style="color: #e81d62 !important" href="http://www.iunbug.com/archives/2013/11/06/843.html">网易前端期待你的加入 ;)</a></span></p>
       </div>
     </section>
-  </core-animated-pages>
-  <section class="nav" layout horizontal end-justified>
-  	<div layout horizontal><paper-fab start-justified icon="icons:arrow-back" id="preBtn" on-click="{{prePage}}"><paper-shadow z="5"></paper-shadow></paper-fab></div>
-  	<div layout horizontal><paper-fab icon="icons:arrow-forward" id="nextBtn" on-click="{{nextPage}}"><paper-shadow z="5"></paper-shadow></paper-fab></div>
-  </section>
-  </template>
-  <script>
-    Polymer('gdg-slider',{
-    	pageIndex: 0,
-    	pageMax: 0,
-    	ready: function(){
-    		this.tabIndex = 0;
-    		this.pageMax = this.$.pages.children.length-1;
-    		this.$.pages.focus();
-    		this.pageIndex = parseInt(window.location.hash.replace('#','') || 0);
-    		this.toggleBtns();
-    	},
-    	keypressHandler: function(event, detail, sender){
-    		var code = event.keyCode,
-    			leftK = [37],
-    			rightK = [32,39];
-			if(rightK.indexOf(code)!=-1){
-				this.nextPage();
-			}else if(leftK.indexOf(code)!=-1){
-				this.prePage();
-			}
-    	},
-    	prePage: function(){
-    		this.pageIndex -= 1;
-	        if(this.pageIndex <= 0) {
-	      		this.pageIndex = 0;
-	        }
-	        window.location.hash = this.pageIndex;
-	        this.toggleBtns();
-    	},
-    	nextPage: function() {
-    		this.pageIndex += 1;
-	        if(this.pageIndex >= this.pageMax) {
-	      		this.pageIndex = this.pageMax;
-	        }
-	        window.location.hash = this.pageIndex;
-	        this.toggleBtns();
-    	},
-    	toggleBtns: function(){
-    		if(this.pageIndex >= this.pageMax) {
-    			this.$.nextBtn.hidden = true;
-    		}else{
-    			this.$.nextBtn.removeAttribute('hidden');
-    		}
-    		if(this.pageIndex <= 0) {
-    			this.$.preBtn.hidden = true;
-    		}else{
-    			this.$.preBtn.removeAttribute('hidden');
-    		}
-    	}
-    });
-  </script>
-</polymer-element>
+  </slide-page>
+
+</body>
+</html>
